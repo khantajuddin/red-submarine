@@ -197,7 +197,7 @@ section{
                 animation: rotate 9s infinite linear;
     }
     
-    .home-right-box: .banner-right  {
+    .home-right-box .banner-right  {
        
         position: absolute;
         top: -50px;
@@ -206,7 +206,7 @@ section{
         width:380px;
         height: 380px;
     }
-     .home-right-box: .banner-right img{
+     .home-right-box .banner-right img{
           -webkit-animation: rotate 10s infinite linear;
                   animation: rotate 10s infinite linear;
      }
