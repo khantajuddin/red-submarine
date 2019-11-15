@@ -7,9 +7,13 @@ body{
     color:#555555;
     font-size: 0.9375rem;
 }
+main{
+    overflow: hidden;
+}
 .container {
     position: relative;
 }
+
 @-webkit-keyframes rotate{
     0%{
         -webkit-transform:rotate(0deg);
@@ -145,6 +149,11 @@ section{
     width:270px;
     height: 270px;
 }
+@media(max-width:767px){
+    #home .container .home-left{
+        left:-210px
+    }
+}
 #home .container .home-left img{
     
     -webkit-animation: rotate 10s infinite linear;
@@ -169,9 +178,13 @@ section{
     -webkit-animation: rotate 12s infinite linear;
             animation: rotate 12s infinite linear;
 }
+.home-right-box  .banner-left {
+    display: none;
+}
 @media(min-width:768px){
     .home-right-box  .banner-left  {
         position: absolute;
+        display:block;
         left: -30px;
         bottom: -60px;
         width: 214px;
@@ -236,6 +249,8 @@ section{
     display: block;
     margin-bottom: 1rem;
     position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
 }
 .video-box-small .play-icon {
     top: auto;
@@ -268,6 +283,9 @@ section{
 .slick-track img{
     display: inline-block;
 }
+#projects .slider:not(.active){
+    display:none;
+}
 .project-box{
     display: inline-block;
     text-align: left;
@@ -277,6 +295,17 @@ section{
 #projects .slick-track >div.slick-active + div {text-align: center;}
 #projects .slick-track >div.slick-active + div + div {text-align: right;}
 
+#projects .img-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.4s ease-out;
+}
+
+#projects .project-box:hover .img-hover {
+    opacity: 1;
+}
 .slick-dots li button {
     width: 8px;
     height: 8px;
@@ -414,8 +443,24 @@ section#media .card{
     max-width: 256px;
     margin:0.5rem 0;
     text-align: left;
+    position: relative;
 }
-
+section#media .card .card-body{
+    min-height: 180px;
+}
+section#media .card .card-img-top-hover{
+    position: absolute;
+    top:0;
+    left:0;
+    opacity: 0;
+    transition: all 0.4s ease-out;
+}
+section#media .card a{
+    color:inherit;
+}
+section#media .card:hover .card-img-top-hover{
+    opacity: 1;
+}
 section#media .title-white {
     margin-bottom: 1.5rem;
 }
@@ -459,10 +504,13 @@ section#media .card .btn-primary, section#media .card .btn-primary:hover, sectio
 }
 /*#endregion*/
 /*#region Clients */
-
+section#clients .container .clients-left{
+    display: none;
+}
 @media(min-width:768px){
     section#clients .container .clients-left{
         position: absolute;
+        display: block;
         width: 120px;
         left: -250px;
         bottom: -160px;
