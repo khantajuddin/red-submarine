@@ -98,6 +98,11 @@ body{
     background: url(../img/banner-right-bg.png) top right no-repeat;
     padding-top: 4.5rem;
 }
+@media(max-width:768px){
+    body{
+        padding-top: 0;
+    }
+}
 section{
     padding:6.5rem 0;
 }
@@ -280,6 +285,9 @@ section{
     right: 1.25rem;
 }
 @media(max-width:767px){
+    #home{
+        padding-top: 6rem;
+    }
     #home .slick-list {
         margin: 10px -30px 10px 0;
         margin-bottom: 6.5rem;
@@ -362,7 +370,8 @@ ul.slick-dots {
 }
 @media(max-width:767px){
     #projects {
-        padding-top: 6rem;
+        padding-top: 4.5rem;
+        padding-bottom: 4.5rem;
     }
 }
 /*#endregion home */
@@ -498,7 +507,7 @@ section#media .card .btn-primary, section#media .card .btn-primary:hover, sectio
 
 @media(max-width:767px){
     section#media{
-        padding-top: 2rem;
+        padding-top: 5rem;
     }
     section#media .card{
         margin-right: 20px;
@@ -521,7 +530,7 @@ section#media .card .btn-primary, section#media .card .btn-primary:hover, sectio
 }
 @media(max-width:767px){
     #about-us{
-        padding:3rem 0;
+        padding:4.5rem 0 0 0;
     }
 }
 /*#endregion*/
@@ -547,7 +556,8 @@ section#clients .container .clients-left{
  }
 @media(max-width:767px){
     section#clients {
-        padding-bottom: 4.5rem;
+        
+        padding-top: 4.5rem;
     }
     section#clients .container .contact-right {
         position: absolute;
@@ -614,7 +624,11 @@ section#clients .container .clients-left{
         bottom: -150px;
     }
 }
-
+@media(max-width:767px){
+    #contact-us{
+        padding-top: 4.5rem;
+    }
+}
 
 footer{
     background:#282828;

@@ -520,7 +520,12 @@
     <script>
         $(document).ready(function(){
             $('.my-paroller').paroller();
-
+            $('.navbar-nav>li>a').on('click', function(){
+                setTimeout(function(){
+                    $('.navbar-collapse').collapse('hide');
+                },100)
+                
+            });
             $('.slider').slick();
 
             $('.sliderSelectDropdown a').on('click', function(e){
