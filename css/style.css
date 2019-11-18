@@ -524,6 +524,23 @@ section#media .card .btn-primary, section#media .card .btn-primary:hover, sectio
 }
 /*#endregion*/
 /*#region about us */
+.about-img{
+    position: relative;
+}
+
+.img-about-bg {
+    position: absolute;
+    width: 508px;
+    z-index: -1;
+    -webkit-animation: rotate 18s infinite linear;
+                animation: rotate 18s infinite linear;
+}
+@media(max-width:767px){
+    .img-about-bg{
+        width: 100%;
+    }
+}
+
 #about-us p{
     font-size:18px;
     line-height: 1.8;
