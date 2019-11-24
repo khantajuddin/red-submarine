@@ -278,6 +278,7 @@ section{
     position: relative;
     overflow: hidden;
     border-radius: 1rem;
+    max-width: 350px;
 }
 .video-box-small .play-icon {
     top: auto;
@@ -309,7 +310,9 @@ section{
         height: 136px;
     }
 }
-
+.slick-track{
+    margin-left: 0;
+}
 .slick-track img{
     display: inline-block;
 }
