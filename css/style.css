@@ -13,7 +13,9 @@ main{
 .container {
     position: relative;
 }
-
+:focus{
+    outline: none;
+}
 @-webkit-keyframes rotate{
     0%{
         -webkit-transform:rotate(0deg);
