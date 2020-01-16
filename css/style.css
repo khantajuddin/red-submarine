@@ -51,6 +51,13 @@ h3{
 .font-weight-600{
     font-weight: 500;
 }
+.circular-bg{
+  background: #ff0042;
+background: -moz-linear-gradient(top, #ff0042 0%, #3600ff 100%);
+background: -webkit-linear-gradient(top, #ff0042 0%,#3600ff 100%);
+background: linear-gradient(to bottom, #ff0042 0%,#3600ff 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0042', endColorstr='#3600ff',GradientType=0 );
+}
 .gradient-bg{
     background: #ff0042;
     background: -webkit-gradient(linear,  left top, right top,  from(#ff0042),to(#3600ff));
@@ -97,7 +104,7 @@ h3{
     }
 }
 body{
-    background: url(../img/banner-right-bg.png) top right no-repeat;
+    /* background: url(../img/banner-right-bg.png) top right no-repeat; */
     padding-top: 4.5rem;
 }
 @media(max-width:768px){
@@ -114,6 +121,106 @@ section{
         padding:1.5rem 0;
     }
 }
+/*#region New Slider */
+#new-parallex-slider{
+  overflow:hidden;
+}
+.slide {
+  max-width: 960px;
+  margin: auto;
+  position: relative;
+  min-height:700px
+}
+
+.layer-4{
+  position: absolute;
+  left: 0;
+  top:0;
+  width:100%;
+  height: 100%;
+}
+img.blurred-circle-left {
+  position: absolute;
+  width: 60px;
+  left: -130px;
+  top:200px;
+}
+
+img.blurred-circle-top-right {
+  position: absolute;
+  width: 60px;
+  top: 50px;
+  left: 100%;
+}
+
+img.blurred-circle-bottom-right{
+  position: absolute;
+  width: 60px;
+  right:-150px;
+  bottom:50px;
+}
+
+.layer-2 .circular-bg.circle-1 {
+  width: 225px;
+  height: 225px;
+  border-radius: 50%;
+  position: absolute;
+  left: 168px;
+  top:0;
+}
+
+.layer-2 .circular-bg.circle-2 {
+  width: 312px;
+  top:158px;
+  left: 0;
+  height: 312px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.layer-2 .circular-bg.circle-3 {
+  width: 390px;
+  height: 390px;
+  top:168px;
+  right:0;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.layer-2.my-paroller {
+  position: absolute;
+  top:70px;
+  left: 450px;
+  width: 545px;
+  height: 560px;
+  transition: all 0.2s ease-out !important;
+}
+.layer-3{
+  font-size: 228px;
+  position: absolute;
+  bottom: 10px;
+  left: -50px;
+  opacity: 0.1;
+  z-index: -2;
+  transition: all 0.2s ease-out !important;
+}
+.layer-1.my-paroller {
+  width: 400px;
+  position: relative;
+  top: 130px;
+   transition: all 0.2s ease-out !important;
+}
+
+.layer-1.my-paroller h2 {
+  font-size: 74px;
+  font-weight: bold;
+}
+
+.layer-1.my-paroller p {
+  font-size: 24px;
+  width: 281px;
+}
+/*#endregion */
 /*#region header */
 .navbar-light .navbar-nav .nav-link{
     font-size: 13px;
