@@ -12,6 +12,8 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha256-4hqlsNP9KM6+2eA8VUT0kk4RsMRTeS7QGHIM+MZ5sLY=" crossorigin="anonymous" />
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700&display=swap" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+
       <link rel="stylesheet" href="css/style.css">
       <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
       <title>Red Submarine</title>
@@ -551,6 +553,7 @@
             </div>
          </div>
       </footer>
+      
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
       <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
@@ -558,77 +561,8 @@
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha256-NXRS8qVcmZ3dOv3LziwznUHPegFhPZ1F/4inU7uC8h0=" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+      <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
       <script src="js/jquery.paroller.min.js"></script>
-      <script>
-         $(document).ready(function(){
-             if($(window).width() > 768){
-                $('.my-paroller').paroller();
-             }
-             $('.navbar-nav>li>a').on('click', function(){
-                 setTimeout(function(){
-                     $('.navbar-collapse').collapse('hide');
-                 },100)
-                 
-             });
-             $('#new-parallex-slider').slick();
-             $('.slider').slick();
-         
-             $('.sliderSelectDropdown a').on('click', function(e){
-                 e.preventDefault();
-                 var slider = $(this).data('slider-target');
-                 $('#sliderSelectDropdown').text($(this).text());
-                 $('[data-slider-category]').hide();
-                 $('[data-slider-category='+slider+']').slick('destroy');
-                 $('[data-slider-category='+slider+']').slick();
-                 $('[data-slider-category='+slider+']').show();
-         
-         
-             });
-         
-             $(document).ready(function(){
-         // Add smooth scrolling to all links
-         $("nav a").on('click', function(event) {
-         
-         // Make sure this.hash has a value before overriding default behavior
-         if (this.hash !== "") {
-         // Prevent default anchor click behavior
-         event.preventDefault();
-         
-         // Store hash
-         var hash = this.hash;
-         
-         // Using jQuery's animate() method to add smooth page scroll
-         // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-         $('html, body').animate({
-         scrollTop: $(hash).offset().top
-         }, 800, function(){
-         
-         // Add hash (#) to URL when done scrolling (default click behavior)
-         window.location.hash = hash;
-         });
-         } // End if
-         });
-         });
-         
-         // Navigation active state on scroll
-         var nav_sections = $('section');
-         var main_nav = $('nav');
-         var main_nav_height = $('header').outerHeight();
-         
-         $(window).on('scroll', function () {
-         var cur_pos = $(this).scrollTop();
-         
-         nav_sections.each(function() {
-         var top = $(this).offset().top - main_nav_height,
-           bottom = top + $(this).outerHeight();
-         
-         if (cur_pos >= top && cur_pos <= bottom) {
-         main_nav.find('li').removeClass('active');
-         main_nav.find('a[href="#'+$(this).attr('id')+'"]').parent('li').addClass('active');
-         }
-         });
-         });
-         });
-      </script>
+      <script src="js/index.js"></script>
    </body>
 </html>

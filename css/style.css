@@ -125,6 +125,32 @@ section{
 #new-parallex-slider{
   overflow:hidden;
 }
+#new-parallex-slider ul.slick-dots {
+  position: absolute;
+  bottom: 38%;
+  left: 0px;
+  width: auto;
+  text-align: left;
+  width: 970px;
+  transform: translateX(-485px);
+  left: 50%;
+}
+#new-parallex-slider ul.slick-dots li{
+  width:auto;
+  margin-right:4px;
+}
+#new-parallex-slider ul.slick-dots li button{
+  width:22px;
+  height:2px;
+  border:none;
+  border-radius:2px;
+  transition:all 0.3s ease-in-out;
+  background:#eee;
+}
+#new-parallex-slider ul.slick-dots li.slick-active button{
+  width:60px;
+
+}
 .slide {
   max-width: 960px;
   margin: auto;
@@ -145,6 +171,8 @@ img.blurred-circle-left {
   width: 60px;
   left: -130px;
   top:200px;
+  -webkit-animation: rotate 10s infinite linear;    
+  animation: rotate 10s infinite linear;
 }
 
 img.blurred-circle-top-right {
@@ -152,6 +180,8 @@ img.blurred-circle-top-right {
   width: 60px;
   top: 50px;
   left: 100%;
+  -webkit-animation: rotate 10s infinite linear;    
+  animation: rotate 10s infinite linear;
 }
 
 img.blurred-circle-bottom-right{
@@ -159,6 +189,8 @@ img.blurred-circle-bottom-right{
   width: 60px;
   right:-150px;
   bottom:50px;
+  -webkit-animation: rotate 10s infinite linear;    
+  animation: rotate 10s infinite linear;
 }
 
 .layer-2 .circular-bg.circle-1 {
@@ -167,7 +199,13 @@ img.blurred-circle-bottom-right{
   border-radius: 50%;
   position: absolute;
   left: 168px;
-  top:0;
+  transform:translate(0,-70px);
+  opacity:0;
+  transition:all 0.4s ease-out;
+}
+.circular-bg.circle-1.animated-circle{
+  -webkit-animation: rotate 10s infinite linear;    
+  animation: rotate 10s infinite linear;
 }
 
 .layer-2 .circular-bg.circle-2 {
@@ -177,6 +215,8 @@ img.blurred-circle-bottom-right{
   height: 312px;
   border-radius: 50%;
   position: absolute;
+  /* -webkit-animation: rotate 10s infinite linear;    
+  animation: rotate 10s infinite linear; */
 }
 
 .layer-2 .circular-bg.circle-3 {
@@ -186,6 +226,8 @@ img.blurred-circle-bottom-right{
   right:0;
   border-radius: 50%;
   position: absolute;
+  /* -webkit-animation: rotate 10s infinite linear;   
+  animation: rotate 10s infinite linear; */
 }
 
 .layer-2 {
@@ -707,8 +749,6 @@ section#clients .container .clients-left{
     float:none;
     text-align: center;
 }
-
-
 /*#endregion */
 /*#region footer*/
 .call-icon{
