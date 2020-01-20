@@ -9,67 +9,91 @@ $(document).ready(function () {
     }, 100)
   });
   
-  function animCircle(el1,el2,el3, play){
+  function animCircle(nextSlide){
 
-  var t1 = gsap.timeline();
-  var t2 = gsap.timeline();
-  var t3 = gsap.timeline();
-
-
-    
-    t1.to(el1, {duration: 1.6, y:180, opacity:1})
+     var el1 = $('.slick-active  .circle-1');
+    var el2 = $('.slick-active  .circle-2');
+     var el3 = $('.slick-active .circle-3');
+    var el4 = $('.slick-active .layer-1');
+    var el5 = $('.slick-active  .layer-3');
+    var el6 = $('.slick-active  .layer-4');
+    var t1 = gsap.timeline();
+     var t2 = gsap.timeline();
+     var t3 = gsap.timeline();
+    var t4 = gsap.timeline();
+    var t5 = gsap.timeline();
+    var t6 = gsap.timeline();
+    t1.to(el1, {duration: 0.8, y:100, opacity:1, delay:-0.2})
     .to(el1, 10, {rotation:"360", ease:Linear.easeNone, repeat:-1});
 
-    t2.to(el2, {duration: 1.6, y:-158, opacity:1})
-    .to(el2, 10, {rotation:"360", ease:Linear.easeNone, repeat:-1});
+    t2.to(el2, {duration: 1, x:100, opacity:1})
+     .to(el2, 10, {rotation:"360", ease:Linear.easeNone, repeat:-1});
 
-    t3.to(el3, {duration: 1.6, y:-168, opacity:1})
-    .to(el3, 10, {rotation:"360", ease:Linear.easeNone, repeat:-1});
-    t1.paused(true) 
-    t2.paused(true) 
-    t3.paused(true)
-    if(play=="play"){
-      t1.play() 
-      t2.play() 
-      t3.play()
-    }else if(play=="reverse"){
-      alert("hi")
-      t1.reverse() 
-      t2.reverse() 
-      t3.reverse()
-    }
+     t3.to(el3, {duration: 1.2, y:-100, opacity:1})
+     .to(el3, 10, {rotation:"360", ease:Linear.easeNone, repeat:-1});
+
+    t4.to(el4, {duration: 0, y:80, opacity:1});
+    t5.to(el5, {duration: 0.6, x:-50, opacity:0.1, delay:0.6});
+    t6.to(el6, {duration: 3, opacity:1, onComplete: function(){
+      //this.reverse(0.2)
+    }});
+
+
+     t1.paused(true) 
+     t2.paused(true) 
+     t3.paused(true)
+    t4.paused(true)
+    t5.paused(true)
+    t6.paused(true)
+       t1.play() 
+       t2.play() 
+       t3.play()
+    t4.play()
+    t5.play()
+    t6.play()
+    
   }
 
 
 
   $('#new-parallex-slider').on('init', function (event, slick, direction) {
-    var c1 = $('.slick-active .slide .circle-1');
-    var c2 = $('.slick-active .slide .circle-2');
-    var c3 = $('.slick-active .slide .circle-3');
-    animCircle(c1,c2,c3,"play");
+    
+    animCircle();
 
   });
 
-  $('#new-parallex-slider').on('beforeChange', function (event, slick, direction) {
-    var c1 = $('.slick-active .slide .circle-1');
-    var c2 = $('.slick-active .slide .circle-2');
-    var c3 = $('.slick-active .slide .circle-3');
-    animCircle(c1,c2,c3,"reverse");
+  $('#new-parallex-slider').on('afterChange', function (event, slick, currentSlide, nextSlide) {
+
+    if( 2 === currentSlide) {
+      //this should do the same thing -> slider.slickPause();
+      $('#new-parallex-slider').slick('slickPause')
+    }else{
+      $('#new-parallex-slider').slick('slickPlay')
+    };
+
+    animCircle(nextSlide);
 
   });
-  $('#new-parallex-slider').on('afterChange', function (event, slick, direction) {
-    var c1 = $('.slick-active .slide .circle-1');
-    var c2 = $('.slick-active .slide .circle-2');
-    var c3 = $('.slick-active .slide .circle-3');
-    animCircle(c1,c2,c3,"play");
-
-  });
-
+  
   $('#new-parallex-slider').slick({
     dots: true,
-    infinite:false
+    infinite:false,
+    speed: 1000,
+    waitForAnimate: false,
+    autoplay:true,
+    autoplaySpeed: 4000,
+    pauseOnHover:false,
+    pauseOnFocus:false
   });
-
+  /*$('#new-parallex-slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+    console.log(event)
+    $(this).slick('slickPause');
+    return false;
+        animCircle(nextSlide);
+        
+      });
+  
+      */
   $('.slider').slick();
 
   $('.tab-links a').on('click', function (e) {
