@@ -13,10 +13,194 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700&display=swap" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
 
-
+      <link rel="stylesheet" href="css/jquery.animateSlider.css">
+    
+		<!-- Demo css -->
       <link rel="stylesheet" href="css/style.css">
       <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
       <title>Red Submarine</title>
+      <style>
+      .anim-slide{
+      font-family: Ubuntu;    
+      font-size: 10px;
+    }
+    
+    .gradient-bg{
+    background: #ff0042;
+    background: -webkit-gradient(linear,  left top, right top,  from(#ff0042),to(#3600ff));
+    background: -o-linear-gradient(left,  #ff0042 0%,#3600ff 100%);
+    background: linear-gradient(to right,  #ff0042 0%,#3600ff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0042', endColorstr='#3600ff',GradientType=1 );
+  }
+    .anim-slider{
+      text-align: left;
+    }
+    .overlay-text{
+      font-size: 22.8em;
+      bottom:0.2em;
+      left:0.35em;
+      z-index: -1;
+      text-transform: uppercase;
+      font-weight: bold;
+      color:#f4f4f4;
+    }
+
+    .slider-title{
+      font-size: 7.4em;
+      top:2em;
+      line-height: 1;      
+      font-weight: bold;
+      left:2.7em;
+      width: 40%;
+    }
+    .slider-subtitle{
+      font-size: 2.4em;
+      top:13.6em;
+      left:8.7em;
+      width: 27%;
+    }
+    .circle-3,.circle-2,.circle-1{
+      border-radius: 50%;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    .circle-3 span,.circle-2 span,.circle-1 span{
+      position: absolute;
+      left:0;
+      top:0;
+      width:100%;      
+      height: 100%;
+      animation:spin1 10s infinite linear;
+    }
+    .circle-3 span{
+
+      transform: rotate(0deg);
+      }
+    .circle-2 span{
+
+      transform: rotate(30deg);
+    }
+    .circle-1 span{
+
+      transform: rotate(60deg);
+    }
+    @keyframes spin1 {
+      to{
+        transform: rotate(360deg);
+      }
+    }
+    .circle-3 {
+        width: 22.5em;
+        height: 22.5em;
+        left: 72em;
+        top: 45em;
+    }
+    .circle-2 {
+        width: 31.2em;
+        height: 31.2em;
+        left:45em;
+        top: 29.5em;
+    }
+    .circle-1 {
+        width: 39em;
+        height: 39em;
+        left: 59em;
+        top: 8.8em;
+    }
+    .slide2 .circle-3{
+      
+    }
+    .slide2 .circle-2{
+
+    }
+    .slide2 .circle-1{
+
+    }
+    .blurred-circle-top-right{
+      left:9.5em;
+      top:6em;
+      width:5em;
+      height:5em;
+    }
+    .blurred-circle-bottom-right{
+      left:123em;
+      top:21em;
+      width:5em;
+      height:5em;
+    }
+    .blurred-circle-left-bottom{
+      left:26em;
+      top:59em;
+      width:5em;
+      height:5em;
+    }
+
+    .anim-dots span {
+      width: 2.2em;
+      font-size: 3.3px;
+      height: 2px;
+      left: 0;
+      margin:0 2px 0 0;
+      transition:all 0.3s ease-in-out;
+      box-shadow: none;
+      background-color: #e4e4e4;
+  }
+  .anim-dots span:before{
+    content: "";
+    width:0px;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    top:0;
+  }
+.anim-dots {
+    left: 1.5em;
+    bottom: 3.7em;
+    text-align: left;
+}
+.anim-dots span.anim-dots-this{
+  width: 6em;
+  animation: widthSlide;
+}
+
+.anim-dots span.anim-dots-this:after{
+    display:none;
+}
+    @media(max-width: 767px){
+      .anim-slider{
+        height: calc(700px / 3);
+        margin-top: 40px;
+      }
+      .anim-slide{
+      font-size: 3.3px;
+      }
+
+      .slider-title{
+      font-size: 7.4em;      
+      left:1em;
+    }
+    .slider-subtitle{
+      font-size: 3em;
+      top:11.7em;
+      left:2.7em;
+    }
+    .overlay-text {
+        font-size: 18.8em;
+        bottom: 0;
+        left: 0.32em;
+    }
+    .blurred-circle-bottom-right {
+      left: 100em;
+      top: 13em;
+      }
+      .blurred-circle-left-bottom {
+        left: 20em;
+        top: 65em;
+      }
+      .blurred-circle-top-right {
+        left: 2.5em;
+      }
+    }</style>
    </head>
    <body>
       <header class="bg-white shadow-sm px-lg-5 fixed-top">
@@ -50,68 +234,37 @@
          </nav>
       </header>
       <main>
-         <div id="new-parallex-slider">
-          <div class="slide">
-            
-            <div class="layer-2">
-              <div class="circle-3 circular-bg"></div>
-              <div class="circle-2 circular-bg"></div>
-              
-              <div class="circle-1 circular-bg"></div>
-            </div>
-            <div class="layer-3"><div class="overlay-text">Transcending</div></div>
-            <div class="layer-4">
-              
+        <div class="anim-slider">
+
+          <!-- Slide No1 -->
+          <div class="anim-slide">  
+              <div class="circle-1"><span class="gradient-bg"></span></div>        
+              <div class="circle-2"><span class="gradient-bg"></span></div>        
+              <div class="circle-3"><span class="gradient-bg"></span></div>
+              <div class="overlay-text">Transcending</div>
               <img src="img/blurred-circle.svg" alt="" class="blurred-circle-top-right">
               <img src="img/blurred-circle.svg" alt="" class="blurred-circle-bottom-right">
-              <img src="img/blurred-circle.svg" alt="" class="blurred-circle-left">
-            </div>
-            <div class="layer-1">
-              <h2>Transcending Barriers</h2>
-            <p>We obey emotions, better captured than said</p>
-            </div>
+              <img src="img/blurred-circle.svg" alt="" class="blurred-circle-left-bottom">
+              <div class="slider-title">Transcending Barriers</div>
+              <div class="slider-subtitle">We obey emotions, better captured than said</div>
           </div>
-          <div class="slide">
-            
-            <div class="layer-2">
-              <div class="circle-3 circular-bg"></div>
-              <div class="circle-2 circular-bg"></div>
-              
-              <div class="circle-1 circular-bg"></div>
-            </div>
-            <div class="layer-3"><div class="overlay-text">Transcending</div></div>
-            <div class="layer-4">
-              
+      
+          
+          <!-- Slide No2 -->
+          <div class="anim-slide slide2">
+            <div class="circle-1"><span class="gradient-bg"></span></div>        
+              <div class="circle-2"><span class="gradient-bg"></span></div>        
+              <div class="circle-3"><span class="gradient-bg"></span></div>
+              <div class="overlay-text">Production</div>
               <img src="img/blurred-circle.svg" alt="" class="blurred-circle-top-right">
               <img src="img/blurred-circle.svg" alt="" class="blurred-circle-bottom-right">
-              <img src="img/blurred-circle.svg" alt="" class="blurred-circle-left">
-            </div>
-            <div class="layer-1">
-              <h2>Transcending Barriers</h2>
-            <p>We obey emotions, better captured than said</p>
-            </div>
+              <img src="img/blurred-circle.svg" alt="" class="blurred-circle-left-bottom">
+              <div class="slider-title">A&nbsp;Production House</div>
+              <div class="slider-subtitle">Which combines creativity, content & technology.</div>
           </div>
-          <div class="slide">
-            
-            <div class="layer-2">
-              <div class="circle-3 circular-bg"></div>
-              <div class="circle-2 circular-bg"></div>
-              
-              <div class="circle-1 circular-bg"></div>
-            </div>
-            <div class="layer-3"><div class="overlay-text">Production</div></div>
-            <div class="layer-4">
-              
-              <img src="img/blurred-circle.svg" alt="" class="blurred-circle-top-right">
-              <img src="img/blurred-circle.svg" alt="" class="blurred-circle-bottom-right">
-              <img src="img/blurred-circle.svg" alt="" class="blurred-circle-left">
-            </div>
-            <div class="layer-1">
-              <h2>A Production House</h2>
-            <p>Which combines creativity, content & technology.</p>
-            </div>
-          </div>
-         </div>
+          <!-- Dynamically created dots -->
+          
+        </div>
          <section id="projects">
             <div class="container">
                <h2 class="title">Projects <small>With numerous projects in our hanger, we do boast pool of work done.</small></h2>
@@ -511,6 +664,74 @@
       <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
       <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
       <script src="js/jquery.paroller.min.js"></script>
+      <script src="js/swipe.js"></script>
       <script src="js/index.js"></script>
+
+		<!-- Load the plugin -->
+		<script src="js/jquery.animateSlider.js"></script>
+		<script>
+      var anim = 	{ ".circle-1"	: 
+						{
+							show   	  : "fadeInRight",
+              hide 	    : "fadeOutLeft",
+              delayShow : "delay0-25s"
+             },
+             ".circle-2"	: 
+						{
+							show   	  : "fadeInRight",
+							hide 	    : "fadeOutLeft",
+							delayShow : "delay0-5s"
+             },
+             ".circle-3"	: 
+						{
+							show   	  : "fadeInRight",
+							hide 	    : "fadeOutLeft",
+							delayShow : "delay-75s"
+             },
+             ".overlay-text"	: 
+						{
+							show   	  : "fadeInRight",
+							hide 	    : "fadeOutLeft",
+							delayShow : "delay2s"
+             },
+             ".blurred-circle-top-right"	: 
+						{
+							show   	  : "fadeInRight",
+							hide 	    : "fadeOutLeft"
+             },
+             ".blurred-circle-bottom-right"	: 
+						{
+							show   	  : "fadeInRight",
+							hide 	    : "fadeOutLeft"
+             },
+             ".blurred-circle-left-bottom"	: 
+						{
+							show   	  : "fadeInRight",
+							hide 	    : "fadeOutLeft"
+             },
+             ".slider-title"	: 
+						{
+							show   	  : "fadeInRight",
+              hide 	    : "fadeOutLeft",
+              delayShow : "delay1s"
+             },
+             ".slider-subtitle"	: 
+						{
+							show   	  : "fadeInRight",
+              hide 	    : "fadeOutLeft",
+              delayShow : "delay1s"
+             } 
+            }
+		 $(".anim-slider").animateSlider(
+		 	{
+		 		autoplay	:true,
+		 		interval	:6000,
+		 		animations 	: 
+				{
+          0	:anim,
+          1 : anim
+				}
+		 	});
+		</script>
    </body>
 </html>
