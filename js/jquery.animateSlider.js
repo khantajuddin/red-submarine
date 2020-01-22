@@ -133,7 +133,8 @@
 			if ( page >= this.slidesCount || page < 0)
 			{
 				return false;
-			}
+      }
+     
 			if (this.config.autoplay)
 			{
 				clearTimeout(this.autoplay);

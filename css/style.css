@@ -322,7 +322,7 @@ background-position: 0% 0;
   bottom: 20em;
   text-align: left;
   width: auto;
-  z-index: 9;
+  z-index: 1000;
 }
 .anim-dots span.anim-dots-this{
 width: 60px;
@@ -934,8 +934,8 @@ line-height: 1.6;
 }
 .img-about-bg{
 position: absolute;
--webkit-animation: rotate 18s infinite linear;
-animation: rotate 18s infinite linear;
+-webkit-animation: rotate 30s infinite linear;
+animation: rotate 30s infinite linear;
 z-index: -1;
 width: 468px;
 height: 468px;
