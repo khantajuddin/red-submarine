@@ -271,14 +271,14 @@
          </section>
          <section id="media">
             <div class="container">
-               <div class="media-left-big-bg  my-paroller" data-paroller-factor="0.1" data-paroller-type="foreground"><span class="gradient-bg"></span></div>
+               <div class="media-left-big-bg  my-paroller" data-paroller-factor="0.02" data-paroller-type="foreground"><span class="gradient-bg"></span></div>
                <div class="media-small-bg  my-paroller" data-paroller-factor="0.2" data-paroller-type="foreground"><span class="gradient-bg"></span></div>
                <h2 class="title-white">Media</h2>
                <div class="slider" data-slick='{
                   "slidesToShow":4,
                   "slidesToScroll":4,
-                  "arrows": false,
-                  "dots": true,
+                  "arrows": true,
+                  "dots": false,
                   "responsive" : [{
                   "breakpoint": 767,
                   "settings": {
@@ -536,17 +536,17 @@
              ".blurred-circle-top-right"	: 
 						{
 							show   	  : "fadeInRight",
-							hide 	    : "fadeOutLeft"
+							hide 	    : "fadeOut"
              },
              ".blurred-circle-bottom-right"	: 
 						{
 							show   	  : "fadeInRight",
-							hide 	    : "fadeOutLeft"
+							hide 	    : "fadeOut"
              },
              ".blurred-circle-left-bottom"	: 
 						{
 							show   	  : "fadeInRight",
-							hide 	    : "fadeOutLeft"
+							hide 	    : "fadeOut"
              },
              ".slider-title"	: 
 						{
@@ -564,7 +564,6 @@
 		 $(".anim-slider").animateSlider(
 		 	{
 		 		autoplay	:true,
-		 		interval	:6000,
 		 		animations 	: 
 				{
           0	:anim,
