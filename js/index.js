@@ -87,4 +87,70 @@ $(document).ready(function () {
       });
     } // End if
   });
+
+
+  var anim = 	{ ".circle-1"	: 
+						{
+							show   	  : "fadeInRight",
+              hide 	    : "fadeOutLeft",
+              delayShow : "delay0-25s"
+             },
+             ".circle-2"	: 
+						{
+							show   	  : "fadeInRight",
+							hide 	    : "fadeOutLeft",
+							delayShow : "delay0-5s"
+             },
+             ".circle-3"	: 
+						{
+							show   	  : "fadeInRight",
+							hide 	    : "fadeOutLeft",
+							delayShow : "delay-75s"
+             },
+             ".overlay-text"	: 
+						{
+							show   	  : "fadeInRight",
+							hide 	    : "fadeOutLeft",
+							delayShow : "delay2s"
+             },
+             ".blurred-circle-top-right"	: 
+						{
+							show   	  : "fadeInRight",
+							hide 	    : "fadeOut"
+             },
+             ".blurred-circle-bottom-right"	: 
+						{
+							show   	  : "fadeInRight",
+							hide 	    : "fadeOut"
+             },
+             ".blurred-circle-left-bottom"	: 
+						{
+							show   	  : "fadeInRight",
+							hide 	    : "fadeOut"
+             },
+             ".slider-title"	: 
+						{
+							show   	  : "fadeInRight",
+              hide 	    : "fadeOutLeft",
+              delayShow : "delay1s"
+             },
+             ".slider-subtitle"	: 
+						{
+							show   	  : "fadeInRight",
+              hide 	    : "fadeOutLeft",
+              delayShow : "delay1s"
+             } 
+            }
+		 $(".anim-slider").animateSlider(
+		 	{
+		 		autoplay	:true,
+		 		animations 	: 
+				{
+          0	:anim,
+          1 : anim,
+          2 : anim
+				}
+       });
+       
+       
 });

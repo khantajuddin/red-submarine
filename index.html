@@ -71,9 +71,20 @@
               <div class="slider-subtitle">We obey emotions, better captured than said</div>
           </div>
       
-          
           <!-- Slide No2 -->
-          <div class="anim-slide slide2">
+          <div class="anim-slide slide2">  
+            <div class="circle-1"><span class="gradient-bg"></span></div>        
+            <div class="circle-2"><span class="gradient-bg"></span></div>        
+            <div class="circle-3"><span class="gradient-bg"></span></div>
+            <div class="overlay-text">Transcending</div>
+            <img src="img/blurred-circle.svg" alt="" class="blurred-circle-top-right">
+            <img src="img/blurred-circle.svg" alt="" class="blurred-circle-bottom-right">
+            <img src="img/blurred-circle.svg" alt="" class="blurred-circle-left-bottom">
+            <div class="slider-title">Transcending Barriers</div>
+            <div class="slider-subtitle">We obey emotions, better captured than said</div>
+        </div>
+          <!-- Slide No3 -->
+          <div class="anim-slide slide3">
             <div class="circle-1"><span class="gradient-bg"></span></div>        
               <div class="circle-2"><span class="gradient-bg"></span></div>        
               <div class="circle-3"><span class="gradient-bg"></span></div>
@@ -504,72 +515,11 @@
       <!-- <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script> -->
       <script src="js/jquery.paroller.min.js"></script>
       <script src="js/swipe.js"></script>
+      <script src="js/jquery.animateSlider.js"></script>
       <script src="js/index.js"></script>
 
 		<!-- Load the plugin -->
-		<script src="js/jquery.animateSlider.js"></script>
-		<script>
-      var anim = 	{ ".circle-1"	: 
-						{
-							show   	  : "fadeInRight",
-              hide 	    : "fadeOutLeft",
-              delayShow : "delay0-25s"
-             },
-             ".circle-2"	: 
-						{
-							show   	  : "fadeInRight",
-							hide 	    : "fadeOutLeft",
-							delayShow : "delay0-5s"
-             },
-             ".circle-3"	: 
-						{
-							show   	  : "fadeInRight",
-							hide 	    : "fadeOutLeft",
-							delayShow : "delay-75s"
-             },
-             ".overlay-text"	: 
-						{
-							show   	  : "fadeInRight",
-							hide 	    : "fadeOutLeft",
-							delayShow : "delay2s"
-             },
-             ".blurred-circle-top-right"	: 
-						{
-							show   	  : "fadeInRight",
-							hide 	    : "fadeOut"
-             },
-             ".blurred-circle-bottom-right"	: 
-						{
-							show   	  : "fadeInRight",
-							hide 	    : "fadeOut"
-             },
-             ".blurred-circle-left-bottom"	: 
-						{
-							show   	  : "fadeInRight",
-							hide 	    : "fadeOut"
-             },
-             ".slider-title"	: 
-						{
-							show   	  : "fadeInRight",
-              hide 	    : "fadeOutLeft",
-              delayShow : "delay1s"
-             },
-             ".slider-subtitle"	: 
-						{
-							show   	  : "fadeInRight",
-              hide 	    : "fadeOutLeft",
-              delayShow : "delay1s"
-             } 
-            }
-		 $(".anim-slider").animateSlider(
-		 	{
-		 		autoplay	:true,
-		 		animations 	: 
-				{
-          0	:anim,
-          1 : anim
-				}
-		 	});
-		</script>
+		
+
    </body>
 </html>
