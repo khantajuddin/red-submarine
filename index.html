@@ -19,188 +19,7 @@
       <link rel="stylesheet" href="css/style.css">
       <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
       <title>Red Submarine</title>
-      <style>
-      .anim-slide{
-      font-family: Ubuntu;    
-      font-size: 10px;
-    }
-    
-    .gradient-bg{
-    background: #ff0042;
-    background: -webkit-gradient(linear,  left top, right top,  from(#ff0042),to(#3600ff));
-    background: -o-linear-gradient(left,  #ff0042 0%,#3600ff 100%);
-    background: linear-gradient(to right,  #ff0042 0%,#3600ff 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0042', endColorstr='#3600ff',GradientType=1 );
-  }
-    .anim-slider{
-      text-align: left;
-    }
-    .overlay-text{
-      font-size: 22.8em;
-      bottom:0.2em;
-      left:0.35em;
-      z-index: -1;
-      text-transform: uppercase;
-      font-weight: bold;
-      color:#f4f4f4;
-    }
-
-    .slider-title{
-      font-size: 7.4em;
-      top:2em;
-      line-height: 1;      
-      font-weight: bold;
-      left:2.7em;
-      width: 40%;
-    }
-    .slider-subtitle{
-      font-size: 2.4em;
-      top:13.6em;
-      left:8.7em;
-      width: 27%;
-    }
-    .circle-3,.circle-2,.circle-1{
-      border-radius: 50%;
-      box-sizing: border-box;
-      overflow: hidden;
-    }
-    .circle-3 span,.circle-2 span,.circle-1 span{
-      position: absolute;
-      left:0;
-      top:0;
-      width:100%;      
-      height: 100%;
-      animation:spin1 10s infinite linear;
-    }
-    .circle-3 span{
-
-      transform: rotate(0deg);
-      }
-    .circle-2 span{
-
-      transform: rotate(30deg);
-    }
-    .circle-1 span{
-
-      transform: rotate(60deg);
-    }
-    @keyframes spin1 {
-      to{
-        transform: rotate(360deg);
-      }
-    }
-    .circle-3 {
-        width: 22.5em;
-        height: 22.5em;
-        left: 72em;
-        top: 45em;
-    }
-    .circle-2 {
-        width: 31.2em;
-        height: 31.2em;
-        left:45em;
-        top: 29.5em;
-    }
-    .circle-1 {
-        width: 39em;
-        height: 39em;
-        left: 59em;
-        top: 8.8em;
-    }
-    .slide2 .circle-3{
-      
-    }
-    .slide2 .circle-2{
-
-    }
-    .slide2 .circle-1{
-
-    }
-    .blurred-circle-top-right{
-      left:9.5em;
-      top:6em;
-      width:5em;
-      height:5em;
-    }
-    .blurred-circle-bottom-right{
-      left:123em;
-      top:21em;
-      width:5em;
-      height:5em;
-    }
-    .blurred-circle-left-bottom{
-      left:26em;
-      top:59em;
-      width:5em;
-      height:5em;
-    }
-
-    .anim-dots span {
-      width: 2.2em;
-      font-size: 3.3px;
-      height: 2px;
-      left: 0;
-      margin:0 2px 0 0;
-      transition:all 0.3s ease-in-out;
-      box-shadow: none;
-      background-color: #e4e4e4;
-  }
-  .anim-dots span:before{
-    content: "";
-    width:0px;
-    height: 2px;
-    position: absolute;
-    left: 0;
-    top:0;
-  }
-.anim-dots {
-    left: 1.5em;
-    bottom: 3.7em;
-    text-align: left;
-}
-.anim-dots span.anim-dots-this{
-  width: 6em;
-  animation: widthSlide;
-}
-
-.anim-dots span.anim-dots-this:after{
-    display:none;
-}
-    @media(max-width: 767px){
-      .anim-slider{
-        height: calc(700px / 3);
-        margin-top: 40px;
-      }
-      .anim-slide{
-      font-size: 3.3px;
-      }
-
-      .slider-title{
-      font-size: 7.4em;      
-      left:1em;
-    }
-    .slider-subtitle{
-      font-size: 3em;
-      top:11.7em;
-      left:2.7em;
-    }
-    .overlay-text {
-        font-size: 18.8em;
-        bottom: 0;
-        left: 0.32em;
-    }
-    .blurred-circle-bottom-right {
-      left: 100em;
-      top: 13em;
-      }
-      .blurred-circle-left-bottom {
-        left: 20em;
-        top: 65em;
-      }
-      .blurred-circle-top-right {
-        left: 2.5em;
-      }
-    }</style>
+     
    </head>
    <body>
       <header class="bg-white shadow-sm px-lg-5 fixed-top">
@@ -217,6 +36,9 @@
                   <li class="nav-item">
                      <a class="nav-link" href="#projects">Projects</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#what-we-do">What we do</a>
+                 </li>
                   <li class="nav-item">
                      <a class="nav-link" href="#media">Media</a>
                   </li>
@@ -283,6 +105,7 @@
                         </a>
                         <h3>CHALO SAAF KAREIN</h3>
                         <p>EP#01  PROMO 01 - Doordarshan (PMO)</p>
+                        <div class="tag">#CSR Films</div>
                      </div>
                   
                      <div class="project-box">
@@ -293,6 +116,7 @@
                         </a>
                         <h3>CHALO SAAF KAREIN</h3>
                         <p>EP#06  PROMO 01 - Doordarshan (PMO)</p>
+                        <div class="tag">#CSR Films</div>
                      </div>
                  
                      <div class="project-box">
@@ -303,6 +127,7 @@
                         </a>
                         <h3>CHALO SAAF KAREIN</h3>
                         <p>EP#08  PROMO 01 - Doordarshan (PMO)</p>
+                        <div class="tag">#CSR Films</div>
                      </div>
                  
                      <div class="project-box">
@@ -313,6 +138,7 @@
                         </a>
                         <h3>CHALO SAAF KAREIN</h3>
                         <p>EP#09  PROMO 01 - Doordarshan (PMO)</p>
+                        <div class="tag">#CSR Films</div>
                      </div>
                   
                      <div class="project-box">
@@ -323,6 +149,7 @@
                         </a>
                         <h3>CHALO SAAF KAREIN</h3>
                         <p>EP#12#DAD - Doordarshan (PMO)</p>
+                        <div class="tag">#CSR Films</div>
                      </div>
                  
                      <div class="project-box">
@@ -333,6 +160,7 @@
                         </a>
                         <h3>CHALO SAAF KAREIN</h3>
                         <p>EP#14 PROMO 01 - Doordarshan (PMO)</p>
+                        <div class="tag">#CSR Films</div>
                      </div>
                  
                      <div class="project-box">
@@ -343,6 +171,7 @@
                         </a>
                         <h3>CHALO SAAF KAREIN</h3>
                         <p>EP#18 PROMO 01 - Doordarshan (PMO)</p>
+                        <div class="tag">#CSR Films</div>
                      </div>
                   </div class="tab-content">
                
@@ -356,6 +185,7 @@
                         </a>
                         <h3>Anita Raj Celebrity Promo</h3>
                         <p>Doordarshan (PMO)</p>
+                        <div class="tag">#CSR Films</div>
                      </div>
                  
                      <div class="project-box">
@@ -366,6 +196,7 @@
                         </a>
                         <h3>Aruna Irani Celebrity Promo</h3>
                         <p>Doordarshan (PMO)</p>
+                        <div class="tag">#CSR Films</div>
                      </div>
                   
                      <div class="project-box">
@@ -376,6 +207,7 @@
                         </a>
                         <h3>Raghuveer Yadav Celebrity Promo</h3>
                         <p>Doordarshan (PMO)</p>
+                        <div class="tag">#CSR Films</div>
                      </div>
                   
                      <div class="project-box">
@@ -386,6 +218,7 @@
                         </a>
                         <h3>Upasna Singh Celebrity Promo</h3>
                         <p>Doordarshan (PMO)</p>
+                        <div class="tag">#CSR Films</div>
                      </div>
                </div>
                
@@ -398,6 +231,7 @@
                         </a>
                         <h3>Doordarashan Launch</h3>
                         <p>Doordarshan Launches a brand new Comedy Show on cleanliness and hygiene 'ChaloSaafKarein'</p>
+                        <div class="tag">#CSR Films</div>
                      </div> 
                </div>
 
@@ -410,6 +244,7 @@
                    </a>
                    <h3>Doordarashan Launch</h3>
                    <p>Doordarshan Launches a brand new Comedy Show on cleanliness and hygiene 'ChaloSaafKarein'</p>
+                   <div class="tag">#CSR Films</div>
                 </div> 
           </div>
             </div>
@@ -422,22 +257,22 @@
                
                      <ul class="list">
                       <div class="dot-hover"></div>
-                        <li><span><img src="img/csr-white.svg" width="67" height="27" alt=""></span></li>
-                        <li><span><img src="img/csr-white.svg" width="67" height="27" alt=""></span></li>
-                        <li><span><img src="img/csr-white.svg" width="67" height="27" alt=""></span></li>
-                        <li><span><img src="img/csr-white.svg" width="67" height="27" alt=""></span></li>                     
-                        <li><span><img src="img/csr-white.svg" width="67" height="27" alt=""></span></li>
-                        <li><span><img src="img/csr-white.svg" width="67" height="27" alt=""></span></li>
-                        <li><span><img src="img/csr-white.svg" width="67" height="27" alt=""></span></li>
-                        <li><span><img src="img/csr-white.svg" width="67" height="27" alt=""></span></li>
+                        <li><span><img src="img/commercials-white.svg" width="212" height="30" alt=""></span></li>
+                        <li><span><img src="img/promos-white.svg" width="126" height="30" alt=""></span></li>
+                        <li><span><img src="img/serials-white.svg" width="112" height="30" alt=""></span></li>
+                        <li><span><img src="img/csr-white.svg" width="67" height="30" alt=""></span></li>                     
+                        <li><span><img src="img/adcampaign-white.svg" width="211" height="36" alt=""></span></li>
+                        <li><span><img src="img/investor-relation-films-white.svg" width="379" height="30" alt=""></span></li>
+                        <li><span><img src="img/corporate-films-white.svg" width="261" height="36" alt=""></span></li>
+                        <li><span><img src="img/training-and-regional-videos-white.svg" width="439" height="36" alt=""></span></li>
                      </ul>
                 
             </div>
          </section>
          <section id="media">
             <div class="container">
-               <div class="media-left-big-bg my-paroller" data-paroller-factor="0.04" data-paroller-type="foreground"><img src="img/media-left-big-bg.svg" /></div>
-               <div class="media-small-bg my-paroller" data-paroller-factor="0.2" data-paroller-type="foreground"><img src="img/media-small-bg.svg" /></div>
+               <div class="media-left-big-bg  my-paroller" data-paroller-factor="0.1" data-paroller-type="foreground"><span class="gradient-bg"></span></div>
+               <div class="media-small-bg  my-paroller" data-paroller-factor="0.2" data-paroller-type="foreground"><span class="gradient-bg"></span></div>
                <h2 class="title-white">Media</h2>
                <div class="slider" data-slick='{
                   "slidesToShow":4,
@@ -460,7 +295,7 @@
                         <div class="card-body">
                            <span class="btn py-0 btn-primary btn-sm rounded-pill" target="_blank">Doordarshan</span>
                            <p class="card-text font-weight-600  mt-2"><a href="https://topindianshows.in/aao-saaf-karein-show-on-doordarshan/" target="_blank">Aao Saaf Karein Show on Doordarshan</a></Aao></p>
-                           <div class="mt-4 small">November 28, 2018</div>
+                           <div class="mt-4 small date">November 28, 2018</div>
                         </div>
                      </div>
                   </div>
@@ -471,7 +306,7 @@
                         <div class="card-body">
                            <span class="btn py-0 btn-primary btn-sm rounded-pill" target="_blank">Doordarshan</span>
                            <p class="card-text font-weight-600  mt-2"><a href="http://news.statetimes.in/dds-comedy-series-chalo-saaf-karein-to-be-launched-today/" target="_blank">DD’s comedy series ‘Chalo Saaf Karein’ to be launched today</a></Aao></p>
-                           <div class="mt-4 small">January 19, 2019</div>
+                           <div class="mt-4 small date">January 19, 2019</div>
                         </div>
                      </div>
                   </div>
@@ -482,7 +317,7 @@
                         <div class="card-body">
                            <span class="btn py-0 btn-primary btn-sm rounded-pill" target="_blank">Doordarshan</span>
                            <p class="card-text font-weight-600  mt-2"><a href="https://www.lokmatnews.in/television/aao-saaf-kare-new-television-show-based-on-swachh-bharat-abhiyan-coming-soon-on-doordarshan/" target="_blank">स्वच्छ भारत मिशन' पर आधारित होगा दूरदर्शन का ये अनोखा शो, ये स्टार्स लगाएंगे चार चांद</a></Aao></p>
-                           <div class="mt-4 small">December 26, 2018</div>
+                           <div class="mt-4 small date">December 26, 2018</div>
                         </div>
                      </div>
                   </div>
@@ -493,7 +328,7 @@
                         <div class="card-body">
                            <span class="btn py-0 btn-primary btn-sm rounded-pill" target="_blank">Doordarshan</span>
                            <p class="card-text font-weight-600  mt-2"><a href="https://bestmediainfo.com/2019/01/doordarashan-launches-comedy-series-chalo-saaf-karein/" target="_blank">Doordarashan launches comedy series ‘Chalo Saaf Karein’</a></Aao></p>
-                           <div class="mt-4 small">January 21, 2019</div>
+                           <div class="mt-4 small date">January 21, 2019</div>
                         </div>
                      </div>
                   </div>
@@ -504,7 +339,7 @@
                         <div class="card-body">
                            <span class="btn py-0 btn-primary btn-sm rounded-pill" target="_blank">Doordarshan</span>
                            <p class="card-text font-weight-600  mt-2"><a href="https://www.livehindustan.com/entertainment/tele-talk/story-doordarshan-new-tv-show-aao-saaf-kare-based-on-swachh-bharat-abhiyan-2336482.html" target="_blank">स्वच्छ भारत अभियान' से प्रेरित है दूरदर्शन का नया शो 'आओ साफ करे'</a></Aao></p>
-                           <div class="mt-4 small">December 29, 2018</div>
+                           <div class="mt-4 small date">December 29, 2018</div>
                         </div>
                      </div>
                   </div>
@@ -515,7 +350,7 @@
                         <div class="card-body">
                            <span class="btn py-0 btn-primary btn-sm rounded-pill" target="_blank">Doordarshan</span>
                            <p class="card-text font-weight-600  mt-2"><a href="https://www.newindianexpress.com/entertainment/hindi/2019/jan/06/new-doordarshan-comedy-series-to-focus-on-cleanliness-hygiene-issues-1921375.html" target="_blank">New Doordarshan comedy series to focus on cleanliness, hygiene issues</a></Aao></p>
-                           <div class="mt-4 small">06th January 2019</div>
+                           <div class="mt-4 small date">06th January 2019</div>
                         </div>
                      </div>
                   </div>
@@ -526,7 +361,7 @@
                         <div class="card-body">
                            <span class="btn py-0 btn-primary btn-sm rounded-pill" target="_blank">Doordarshan</span>
                            <p class="card-text font-weight-600  mt-2"><a href="https://zeenews.india.com/hindi/entertainment/bollywood/aao-saaf-kare-new-television-show-base-on-swachh-bharat-abhiyan-coming-soon-on-doordarshan/484187" target="_blank">हंसा-हंसा के देंगे सफाई की सीख, खुद गांधीजी आ रहे हैं आपके पास!</a></Aao></p>
-                           <div class="mt-4 small">December 31, 2018</div>
+                           <div class="mt-4 small date">December 31, 2018</div>
                         </div>
                      </div>
                   </div>
@@ -537,7 +372,7 @@
                         <div class="card-body">
                            <span class="btn py-0 btn-primary btn-sm rounded-pill" target="_blank">Doordarshan</span>
                            <p class="card-text font-weight-600  mt-2"><a href="https://www.tribuneindia.com/news/life-style/new-dd-comedy-series-to-focus-on-cleanliness-hygiene-issues/709072.html" target="_blank">New DD comedy series to focus on cleanliness, hygiene issues</a></Aao></p>
-                           <div class="mt-4 small">January 5, 2019</div>
+                           <div class="mt-4 small date">January 5, 2019</div>
                         </div>
                      </div>
                   </div>
@@ -548,7 +383,7 @@
                         <div class="card-body">
                            <span class="btn py-0 btn-primary btn-sm rounded-pill" target="_blank">Doordarshan</span>
                            <p class="card-text font-weight-600  mt-2"><a href="https://www.theweek.in/wire-updates/entertainment/2019/01/05/lst8-ent-tv%20series.html" target="_blank">New DD comedy series to focus on cleanliness hygiene issues</a></Aao></p>
-                           <div class="mt-4 small">January 5, 2019</div>
+                           <div class="mt-4 small date">January 5, 2019</div>
                         </div>
                      </div>
                   </div>
@@ -558,15 +393,19 @@
          <section id="about-us">
             <div class="container">
                <div class="row align-items-center">
-                  <div class="col-sm-7 ml-auto order-md-1 mb-4 mb-md-0">
+                  <div class="col-sm-6 ml-auto order-md-1 mb-4 mb-md-0">
                      <div class="about-img">
-                         <div class="img-about-bg"><img src="img/about-bg.svg" alt=""></div>
+                         <div class="img-about-bg">
+                           <span class="gradient-bg"></span>
+                           <span class="gradient-bg"></span>
+                           <span class="gradient-bg"></span>
+                         </div>
                         <img src="img/about-img.png" class="img-fluid" alt="About Red Submarine">
                      </div>
                   </div>
-                  <div class="col-sm-4 order-md-0">
+                  <div class="col-sm-5 order-md-0">
                      <h2 class="title mb-4">About Us</h2>
-                     <p class="pt-2">We are the amalgamation of a talented pool of <strong>creative and specialized people</strong> in production, post-production & <strong>state-of-the-art</strong> <strong>in-house facilities</strong> that help to satisfy the varied and complex requirement of clients, especially in various regional languages. </p>
+                     <p class="pt-2">Red Submarine is an initiative started by Arunesh Gope in the year 2009 and since then it has produced more than 100 films under the leadership of Arunesh Gope. The latest addition to the list is a 26 episode comedy show called Chalo saaf kare on cleaniness drive for DD National starring Rashmi Desai, Aruna Irani, Raghubir yadav etc..</p>
                   </div>
                </div>
             </div>
@@ -662,7 +501,7 @@
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha256-NXRS8qVcmZ3dOv3LziwznUHPegFhPZ1F/4inU7uC8h0=" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-      <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+      <!-- <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script> -->
       <script src="js/jquery.paroller.min.js"></script>
       <script src="js/swipe.js"></script>
       <script src="js/index.js"></script>
