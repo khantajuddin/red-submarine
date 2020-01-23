@@ -2,7 +2,7 @@
 *
 *  @name        Animate Slider 
 *  @description A jQuery Slider plugin with specific animations for each element 
-*  @version     0.1.0 
+*  @version     1.0.6 
 *  @copyright   2014 - Vasileios Chouliaras <vasilis.chouliaras@gmail.com> 
 *  @license     MIT - https://github.com/vchouliaras/jquery.animateSlider.js/blob/master/LICENSE-MIT 
 *
@@ -28,7 +28,7 @@
 		 */
 		init		:	function()
 		{
-					
+			
 			this.config			=	$.extend({},this.defaults,this.options);
 			this.slides			=	this.$element.children(".anim-slide");
 			this.slidesCount	=	this.slides.length;
@@ -51,7 +51,6 @@
 			this.loadEvents();
 			this.navigate(this.current);
 			this.updateDots();
-			this.autoplay();
 		},
 		/**
 		 * [Go to current slide and set the proper classes to animate the elements]
@@ -133,13 +132,8 @@
 			if ( page >= this.slidesCount || page < 0)
 			{
 				return false;
-      }
-     
-			if (this.config.autoplay)
-			{
-				clearTimeout(this.autoplay);
-				this.config.autoplay	=	false;
-			}
+			}     
+      
 			this.navigate(page);
 		},
 		/**
@@ -192,40 +186,7 @@
 		 * [Call the animDuration for each slide and if the animation time of current slide is bigger than 
          * config.interval replace it with this.inteval, else leave config.interval with the default value]
 		 */
-		autoplay	:	function() 
-		{
-			if (this.config.autoplay)
-			{
-				var page				=	this.current;
-				var that				=	this;
-				var loop				=	function()
-				{
-					page	=	( page >= that.slidesCount -1 || page < 0 )	? 0 : page + 1;
-					that.navigate(page);
-					that.autoplay();
-				};
-
-				if ( this.interval.length === this.slidesCount )
-				{
-					this.autoplayTime	=	setTimeout(loop,this.interval[page]);
-					return;
-				}
-
-				this.animDuration(page).done(function(animationTime)
-				{
-					if( animationTime >= that.config.interval )
-					{
-						that.interval[page]	=	animationTime;
-						that.autoplayTime	=	setTimeout(loop,0);	
-					}				
-					else if( animationTime < that.config.interval	)
-					{
-						that.interval[page]	=	that.config.interval;
-						that.autoplayTime	=	setTimeout(loop,that.config.interval-animationTime);
-					}
-				});
-			}
-		},
+	
 		/**
 		 * [Find the total animation time for the current slide]
 		 * @param  {number} page	[current slide]
@@ -258,22 +219,14 @@
 			var that = this;
 			this.$navNext.on("click.slide",function(event)
 				{
-					if (that.config.autoplay)
-					{
-						clearTimeout(that.autoplay);
-						that.config.autoplay	=	false;
-					}
+					
 					var page	=	(that.current >= that.slidesCount - 1 ) ?  0 : that.current + 1 ;
 					that.navigate(page,"next");
 					event.preventDefault();
 				});
 			this.$navPrev.on("click.slide",function(event)
 				{
-					if (that.config.autoplay)
-					{
-						clearTimeout(that.autoplay);
-						that.config.autoplay	=	false;
-					}
+					
 					var page	=	( that.current === 0 )? that.slidesCount - 1 : that.current - 1;
 					that.navigate(page,"prev");
 					event.preventDefault(); 
@@ -287,7 +240,6 @@
 		},
 		defaults	:
 		{
-			autoplay	: true,
 			interval	: 5000
 		}
 	};

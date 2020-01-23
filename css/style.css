@@ -304,17 +304,17 @@ height:5em;
 width: 22px;
 height: 2px;
 left: 0;
-border-radius: 1px;
+border-radius: 2px;
 margin:0 2px 0 0;
 box-shadow: none;
-transition:all 0.5s ease-in-out;
+transition:all 0.5s ease-in;
 background: #e4e4e4;
 background: -moz-linear-gradient(left,  #e4e4e4 50%, #d60f1e 50%);
 background: -webkit-linear-gradient(left,  #e4e4e4 50%,#d60f1e 50%);
 background: linear-gradient(to right,  #e4e4e4 50%,#d60f1e 50%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4e4e4', endColorstr='#d60f1e',GradientType=1 );
 background-position: 0% 0;
-    background-size: 200%;
+    background-size: 205%;
 }
 
 .anim-dots {
@@ -326,7 +326,7 @@ background-position: 0% 0;
 }
 .anim-dots span.anim-dots-this{
 width: 60px;
-animation: widthSlide 5s;
+animation: widthSlide 5s linear;
 
 }
 @keyframes widthSlide{

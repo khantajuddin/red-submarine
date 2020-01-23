@@ -143,7 +143,6 @@ $(document).ready(function () {
             }
 		 $(".anim-slider").animateSlider(
 		 	{
-		 		autoplay	:true,
 		 		animations 	: 
 				{
           0	:anim,
@@ -151,6 +150,27 @@ $(document).ready(function () {
           2 : anim
 				}
        });
-       
-       
+       var interval;
+        var timer = function(){
+        interval = setInterval(function(){
+          if($(".anim-dots-this").is(':last-child'))
+          {
+            $( ".anim-dots span:first-child" ).trigger( "click" );
+            
+          }else{
+            $( ".anim-dots-this + span" ).trigger( "click" );
+          }
+          
+         },5000);
+        };
+
+        timer();
+
+        $('.anim-dots span').click(function(){
+            //go back to previous slide and reset time
+          clearInterval(interval);
+          timer()
+        });
+
+
 });
