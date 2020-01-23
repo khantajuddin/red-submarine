@@ -544,7 +544,7 @@ top: 13em;
   display: inline-block;
 }
 #projects .tab-content:not(.active){
-display: none;
+display: none !important;
 }
 
 #projects .tab-links{
