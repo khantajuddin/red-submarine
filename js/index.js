@@ -18,6 +18,8 @@ $(document).ready(function () {
     $(".tab-links a").removeClass('gradient-bg');
     $(this).addClass('gradient-bg');
     $('.tab-content').removeClass('active');
+    $('.tab-content').fadeOut();
+    $(tabContent).fadeIn();
     $(tabContent).addClass('active')
     
   });
