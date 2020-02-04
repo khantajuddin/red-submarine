@@ -286,6 +286,7 @@ left:9.5em;
 top:6em;
 width:5em;
 height:5em;
+
 }
 .blurred-circle-bottom-right{
 left:123em;
@@ -299,7 +300,11 @@ top:60em;
 width:5em;
 height:5em;
 }
-
+.anim-slide-this .blurred-circle-left-bottom.fadeInRight,
+.anim-slide-this .blurred-circle-bottom-right.fadeInRight,
+.anim-slide-this .blurred-circle-top-right.fadeInRight{
+  animation-duration: 6s;
+}
 .anim-dots span {
 width: 22px;
 height: 2px;

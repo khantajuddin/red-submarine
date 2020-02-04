@@ -93,54 +93,57 @@ $(document).ready(function () {
 
   var anim = 	{ ".circle-1"	: 
 						{
-							show   	  : "fadeInRight",
+							show   	  : "slideInRight",
               hide 	    : "fadeOutLeft",
               delayShow : "delay0-25s"
              },
              ".circle-2"	: 
 						{
-							show   	  : "fadeInRight",
+							show   	  : "slideInRight",
 							hide 	    : "fadeOutLeft",
-							delayShow : "delay0-5s"
+							delayShow : "delay0-25s"
              },
              ".circle-3"	: 
 						{
-							show   	  : "fadeInRight",
+							show   	  : "slideInRight",
 							hide 	    : "fadeOutLeft",
-							delayShow : "delay-75s"
+							delayShow : "delay-25s"
              },
              ".overlay-text"	: 
 						{
 							show   	  : "fadeInRight",
 							hide 	    : "fadeOutLeft",
-							delayShow : "delay2s"
+							delayShow : "delay1s"
              },
              ".blurred-circle-top-right"	: 
 						{
 							show   	  : "fadeInRight",
-							hide 	    : "fadeOut"
+              hide 	    : "fadeOutLeft",
+              delayShow : "delay0-5s"
              },
              ".blurred-circle-bottom-right"	: 
 						{
 							show   	  : "fadeInRight",
-							hide 	    : "fadeOut"
+              hide 	    : "fadeOutLeft",
+              delayShow : "delay0-5s"
              },
              ".blurred-circle-left-bottom"	: 
 						{
 							show   	  : "fadeInRight",
-							hide 	    : "fadeOut"
+              hide 	    : "fadeOutLeft",
+              delayShow : "delay0-5s"
              },
              ".slider-title"	: 
 						{
-							show   	  : "fadeInRight",
+							show   	  : "slideInRight",
               hide 	    : "fadeOutLeft",
-              delayShow : "delay1s"
+              delayShow : "delay0-25s"
              },
              ".slider-subtitle"	: 
 						{
-							show   	  : "fadeInRight",
+							show   	  : "slideInRight",
               hide 	    : "fadeOutLeft",
-              delayShow : "delay1s"
+              delayShow : "delay0-25s"
              } 
             }
 		 $(".anim-slider").animateSlider(
