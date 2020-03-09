@@ -707,7 +707,7 @@ width: 450px;
 #what-we-do li span{
 display: inline-block;
 position: relative;
-cursor: pointer;
+cursor: default;
 line-height: 1;
 
 }
