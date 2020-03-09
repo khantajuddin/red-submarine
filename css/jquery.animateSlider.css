@@ -6080,8 +6080,8 @@ v90%, 100% {
 
   100% {
     opacity: 0;
-    -webkit-transform: translateX(-350px);
-    transform: translateX(-350px);
+    -webkit-transform: translateX(-650px);
+    transform: translateX(-650px);
   }
 }
 
@@ -6095,9 +6095,9 @@ v90%, 100% {
 
   100% {
     opacity: 0;
-    -webkit-transform: translateX(-350px);
-    -ms-transform: translateX(-350px);
-    transform: translateX(-350px);
+    -webkit-transform: translateX(-650px);
+    -ms-transform: translateX(-650px);
+    transform: translateX(-650px);
   }
 }
 /* Big */
