@@ -302,7 +302,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 /********************************************************************/
 /* You can add your own classes of animations and delays like below */
 /********************************************************************/
+.delay0-15s{-webkit-animation-delay:.15s;animation-delay:.15s;}
 .delay0-25s{-webkit-animation-delay:.25s;animation-delay:.25s;}
+.delay0-35s{-webkit-animation-delay:.35s;animation-delay:.35s;}
+.delay0-45s{-webkit-animation-delay:.45s;animation-delay:.45s;}
 .delay0-5s{-webkit-animation-delay:0.5s;animation-delay:.5s;}
 .delay0-75s{-webkit-animation-delay:.75s;animation-delay:.75s;}
 .delay1s{-webkit-animation-delay:1s;animation-delay:1s;}
