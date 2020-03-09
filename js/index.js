@@ -95,19 +95,19 @@ $(document).ready(function () {
 						{
 							show   	  : "slideInRight",
               hide 	    : "fadeOutLeft",
-              delayShow : "delay0-25s"
+              delayShow : "delay0-35s"
              },
              ".circle-2"	: 
 						{
 							show   	  : "slideInRight",
 							hide 	    : "fadeOutLeft",
-							delayShow : "delay0-5s"
+							delayShow : "delay0-25s"
              },
              ".circle-3"	: 
 						{
 							show   	  : "slideInRight",
 							hide 	    : "fadeOutLeft",
-							delayShow : "delay-75s"
+							delayShow : "delay-5s"
              },
              ".overlay-text"	: 
 						{
