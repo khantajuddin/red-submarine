@@ -101,13 +101,13 @@ $(document).ready(function () {
 						{
 							show   	  : "slideInRight",
 							hide 	    : "fadeOutLeft",
-							delayShow : "delay0-25s"
+							delayShow : "delay0-5s"
              },
              ".circle-3"	: 
 						{
 							show   	  : "slideInRight",
 							hide 	    : "fadeOutLeft",
-							delayShow : "delay-25s"
+							delayShow : "delay-75s"
              },
              ".overlay-text"	: 
 						{
