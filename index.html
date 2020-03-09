@@ -16,7 +16,7 @@
       <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
       <title>Red Submarine</title>
    </head>
-   <body>
+   <body onload="init()>
       <header class="bg-white shadow-sm px-lg-5 fixed-top ">
          <nav class="navbar navbar-expand-lg py-md-0 navbar-light">
             <a class="navbar-brand" href="#"><img class="logo" height="25" src="img/logo.svg" alt="Red Submarine"></a>
@@ -555,50 +555,75 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha256-NXRS8qVcmZ3dOv3LziwznUHPegFhPZ1F/4inU7uC8h0=" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
       <script src="js/jquery.paroller.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" integrity="sha256-jnOjDTXIPqall8M0MyTSt98JetJuZ7Yu+1Jm7hLTF7U=" crossorigin="anonymous"></script>
       <script>
-         $(function () {
+         function init(){
+	new SmoothScroll(document,120,12)
+}
 
-    var top = 0,
-        step = 55,
-        viewport = $(window).height(),
-        body = $.browser.webkit ? $('body') : $('html'),
-        wheel = false;
+function SmoothScroll(target, speed, smooth) {
+	if (target === document)
+		target = (document.scrollingElement 
+              || document.documentElement 
+              || document.body.parentNode 
+              || document.body) // cross browser support for document scrolling
+      
+	var moving = false
+	var pos = target.scrollTop
+  var frame = target === document.body 
+              && document.documentElement 
+              ? document.documentElement 
+              : target // safari is the new IE
+  
+	target.addEventListener('mousewheel', scrolled, { passive: false })
+	target.addEventListener('DOMMouseScroll', scrolled, { passive: false })
 
+	function scrolled(e) {
+		e.preventDefault(); // disable default scrolling
 
-    $('body').mousewheel(function(event, delta) {
+		var delta = normalizeWheelDelta(e)
 
-        wheel = true;
+		pos += -delta * speed
+		pos = Math.max(0, Math.min(pos, target.scrollHeight - frame.clientHeight)) // limit scrolling
 
-        if (delta < 0) {
+		if (!moving) update()
+	}
 
-            top = (top+viewport) >= $(document).height() ? top : top+=step;
+	function normalizeWheelDelta(e){
+		if(e.detail){
+			if(e.wheelDelta)
+				return e.wheelDelta/e.detail/40 * (e.detail>0 ? 1 : -1) // Opera
+			else
+				return -e.detail/3 // Firefox
+		}else
+			return e.wheelDelta/120 // IE,Safari,Chrome
+	}
 
-            body.stop().animate({scrollTop: top}, 400, function () {
-                wheel = false;
-            });
-        } else {
+	function update() {
+		moving = true
+    
+		var delta = (pos - target.scrollTop) / smooth
+    
+		target.scrollTop += delta
+    
+		if (Math.abs(delta) > 0.5)
+			requestFrame(update)
+		else
+			moving = false
+	}
 
-            top = top <= 0 ? 0 : top-=step;
-
-            body.stop().animate({scrollTop: top}, 400, function () {
-                wheel = false;
-            });
-        }
-
-        return false;
-    });
-
-    $(window).on('resize', function (e) {
-        viewport = $(this).height();
-    });
-
-    $(window).on('scroll', function (e) {
-        if (!wheel)
-            top = $(this).scrollTop();
-    });
-
-});
+	var requestFrame = function() { // requestAnimationFrame cross browser
+		return (
+			window.requestAnimationFrame ||
+			window.webkitRequestAnimationFrame ||
+			window.mozRequestAnimationFrame ||
+			window.oRequestAnimationFrame ||
+			window.msRequestAnimationFrame ||
+			function(func) {
+				window.setTimeout(func, 1000 / 50);
+			}
+		);
+	}()
+}
          $(document).ready(function(){
              if($(window).width() > 768){
                 $('.my-paroller').paroller();
