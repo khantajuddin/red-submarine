@@ -8,14 +8,14 @@ $(function() {
 		swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
 			if (direction == "left") {
 					$( ".anim-dots-this + span" ).trigger( "click" );
-					console.log("left swipe");
+			
 			}
 			if (direction == "right") {
 					$( ".anim-dots-this").prev().trigger( "click" );
-					console.log("right swipe");
+				
 			}			
 			if (direction == "down") {
-					window.scrollBy(0,-300);
+        $('[href="#projects"]').trigger( "click" );
 			}
 			if (direction == "up") {
 					window.scrollBy(0,300);
