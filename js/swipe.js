@@ -15,7 +15,10 @@ $(function() {
 				
 			}			
 			if (direction == "down") {
-        $('[href="#home"]').trigger( "click" );
+        $(window).scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        })
 			}
 			if (direction == "up") {
 				$('[href="#projects"]').trigger( "click" );

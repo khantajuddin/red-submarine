@@ -332,7 +332,7 @@ display:none;
   }
 .anim-slider{
   height:86vh;
-  height: calc(90vh - 60px);
+  height: 580px;
   margin-top: 40px;
 }
 .anim-slide{
@@ -349,7 +349,7 @@ font-size: 6px;
 .slide3 .circle-3,
 .slide3 .circle-2,
 .slide3 .circle-1{
-  margin-left: -46%;
+  margin-left: -40%;
 }
 .blurred-circle-bottom-right {
 left: 100em;
