@@ -19,7 +19,15 @@
       <link rel="stylesheet" href="css/style.css">
       <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
       <title>Red Submarine</title>
-     
+     <style>
+	     #wrapper{
+           
+            height:100vh;
+            overflow:auto;
+            -webkit-overflow-scrolling: touch;
+            position:relative;
+        }
+	   </style>
    </head>
    <body>
       <header class="bg-white shadow-sm px-lg-5 fixed-top">
@@ -55,7 +63,7 @@
             </div>
          </nav>
       </header>
-      <main>
+      <main id="main">
         <div class="anim-slider">
 
           <!-- Slide No1 -->
@@ -527,7 +535,7 @@
       <script src="js/jquery.animateSlider.js"></script>
       <script src="js/index.js"></script>
       <script>$(document).ready(function(){
-            $("html").smoothWheel()
+            $("#main").smoothWheel()
         });
 	</script>
 		
