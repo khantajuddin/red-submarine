@@ -194,39 +194,11 @@ font-size: 10px;
 .anim-slider{
 text-align: left;
 }
-.overlay-text{
-font-size: 22.8em;
-bottom:0.3em;
-line-height: 1;
-left:0.35em;
-z-index: -1;
-text-transform: uppercase;
-font-weight: bold;
-color:#f4f4f4;
-}
+.overlay-text{font-size: 22.8em;bottom:0.3em;line-height: 1;left:0.35em;/* z-index: -1; */text-transform: uppercase;font-weight: bold;color:#f4f4f4;}
 
-.slider-title{
-font-size: 7.4em;
-top:1.8em;
-line-height: 1;      
-font-weight: bold;
-left:2.7em;
-color:#111111;
-width: 40%;
-}
-.slider-subtitle{
-font-size: 2.4em;
-top:12.6em;
-left:8.7em;
-width: 27%;
-color:#666666;
-line-height: 1.2;
-}
-.circle-3,.circle-2,.circle-1{
-border-radius: 50%;
-box-sizing: border-box;
-overflow: hidden;
-}
+.slider-title{font-size: 7.4em;top:1.8em;line-height: 1;font-weight: bold;left:2.7em;color:#111111;width: 40%;z-index: 2;}
+.slider-subtitle{font-size: 2.4em;top:12.6em;left:8.7em;width: 27%;color:#666666;line-height: 1.2;z-index: 2;}
+.circle-3,.circle-2,.circle-1{border-radius: 50%;box-sizing: border-box;overflow: hidden;z-index: 1;}
 .circle-3 span,.circle-2 span,.circle-1 span{
 position: absolute;
 left:0;
