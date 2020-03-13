@@ -318,15 +318,7 @@ animation: widthSlide 5s linear;
 display:none;
 }
 @media(max-width: 767px){
-  .overlay{
-    height: 100vh;
-    top:60px;
-    width: 100%;
-    position:fixed;
-    z-index: 0;
-    display: block;
-    left:0;
-  }
+
   .anim-dots span{
     width:12px;
   }

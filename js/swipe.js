@@ -15,10 +15,10 @@ $(function() {
 					console.log("right swipe");
 			}			
 			if (direction == "down") {
-					//window.scrollBy(0,-300);
+					window.scrollBy(0,-300);
 			}
 			if (direction == "up") {
-					//window.scrollBy(0,300);
+					window.scrollBy(0,300);
 			}
 		},
 		//Default is 75px, set to 0 for demo so any distance triggers swipe
