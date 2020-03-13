@@ -1,153 +1,120 @@
-/**
- * Created by IntelliJ IDEA.
- *
- * User: phil
- * Date: 15/11/12
- * Time: 11:04 AM
- *
- */
-(function ($) {
+class SmoothScroll {
+  constructor(_containerSelector, _params) {
 
-    var self = this, container, running=false, currentY = 0, targetY = 0, oldY = 0, maxScrollTop= 0, minScrollTop, direction, onRenderCallback=null,
-            fricton = 0.95, // higher value for slower deceleration
-            vy = 0,
-            stepAmt = 1,
-            minMovement= 0.1,
-            ts=0.1;
+    // Init DOM elements
+    this.$ = {
+      container: document.querySelector(_containerSelector),
+      containerBody: document.querySelector(_containerSelector + '__body'),
+      hitbox: document.querySelector(_containerSelector + '--hitbox'),
+      controlsDuration: document.querySelector('.controls input[type=range]'),
+      controlsEasing: document.querySelectorAll('.controls__radio'),
+      controlsEasingRadio: document.querySelectorAll('.controls input[type=radio]'),
+      duration: document.querySelector('.controls__duration'),
+    }
 
-    var updateScrollTarget = function (amt) {
-        targetY += amt;
-        vy += (targetY - oldY) * stepAmt;
+    console.log(this.$.controlsEasing)
+
+    // Init params
+    this.params = {
+      containerHeight: this.$.containerBody.offsetHeight,
+      duration: _params.duration,
+      timingFunction: _params.timingFunction,
+    }
+
+    // Launch init functions
+    document.addEventListener('DOMContentLoaded', () => { 
+      this._initStyle()
+      this._initListeners()
+    })
+  }
+
+  _initStyle() {
+
+    const currentScrollY = window.scrollY
+
+    // Set container style
+    this.$.container.style.overflow = `hidden`
+    this.$.container.style.position = `fixed`
+    this.$.container.style.height = `100vh`
+    
+    // Set containerBody style
+    this.$.containerBody.style.transform = `translateY(${-window.scrollY}px)` // Scroll to current scroll
+    
+    // Add transtion after scroll to
+    const addTransition = () => {
+      // Set currentTranslateY
+      const regex = /\s?([,])\s?/ 
+      const splitTransform = getComputedStyle(this.$.containerBody).transform.split(regex)
+      const currentTranslateY = parseInt(splitTransform[splitTransform.length-1])
       
-        oldY = targetY;
-
-
-    }
-    var render = function () {
-        if (vy < -(minMovement) || vy > minMovement) {
-
-            currentY = (currentY + vy);
-            if (currentY > maxScrollTop) {
-                currentY = vy = 0;
-            } else if (currentY < minScrollTop) {
-                    vy = 0;
-                    currentY = minScrollTop;
-                }
-           
-            container.scrollTop(-currentY);
-
-            vy *= fricton;
-            
-         //   vy += ts * (currentY-targetY);
-            // scrollTopTweened += settings.tweenSpeed * (scrollTop - scrollTopTweened);
-            // currentY += ts * (targetY - currentY);
-
-            if(onRenderCallback){
-                onRenderCallback();
-            }
-        }
-    }
-    var animateLoop = function () {
-        if(! running)return;
-        requestAnimFrame(animateLoop);
-        render();
-        //log("45","animateLoop","animateLoop", "",stop);
-    }
-    var onWheel = function (e) {
-        e.preventDefault();
-        var evt = e.originalEvent;
-       
-        var delta = evt.detail ? evt.detail * -1 : evt.wheelDelta / 40;
-        var dir = delta < 0 ? -1 : 1;
-        if (dir != direction) {
-            vy = 0;
-            direction = dir;
-        }
-
-        //reset currentY in case non-wheel scroll has occurred (scrollbar drag, etc.)
-        currentY = -container.scrollTop();
-        
-        updateScrollTarget(delta);
+      if(-currentTranslateY != currentScrollY) {
+        setTimeout(() => {
+          addTransition(currentTranslateY)
+        }, 10);
+      } else {
+        // Add transition
+        this.$.containerBody.style.transition = `transform ${this.params.duration}ms ${this.params.timingFunction}`
+      }
     }
 
-    /*
-     * http://paulirish.com/2011/requestanimationframe-for-smart-animating/
-     */
-    window.requestAnimFrame = (function () {
-        return  window.requestAnimationFrame ||
-                window.webkitRequestAnimationFrame ||
-                window.mozRequestAnimationFrame ||
-                window.oRequestAnimationFrame ||
-                window.msRequestAnimationFrame ||
-                function (callback) {
-                    window.setTimeout(callback, 1000 / 60);
-                }; 
-              
-                
-    })();
+    // Run addTranstion
+    addTransition()
 
-    /*
-     * http://jsbin.com/iqafek/2/edit
-     */
-    var normalizeWheelDelta = function () {
-        // Keep a distribution of observed values, and scale by the
-        // 33rd percentile.
-        var distribution = [], done = null, scale = 30;
-        return function (n) {
-            // Zeroes don't count.
-            if (n == 0) return n;
-            // After 500 samples, we stop sampling and keep current factor.
-            if (done != null) return n * done;
-            var abs = Math.abs(n);
-            // Insert value (sorted in ascending order).
-            outer: do { // Just used for break goto
-                for (var i = 0; i < distribution.length; ++i) {
-                    if (abs <= distribution[i]) {
-                        distribution.splice(i, 0, abs);
-                        break outer;
-                    }
-                }
-                distribution.push(abs);
-            } while (false);
-            // Factor is scale divided by 33rd percentile.
-            var factor = scale / distribution[Math.floor(distribution.length / 3)];
-            if (distribution.length == 500) done = factor;
-            return n * factor;
-        };
-    }();
+    // Set hitbox style
+    this.$.hitbox.style.height = `${this.params.containerHeight}px`
 
+  }
 
-    $.fn.smoothWheel = function () {
-        //  var args = [].splice.call(arguments, 0);
-        var options = jQuery.extend({}, arguments[0]);
-        return this.each(function (index, elm) {
+  _initListeners() {
 
-            if(!('ontouchstart' in window)){
-                container = $(this);
-                container.bind("mousewheel", onWheel);
-                container.bind("DOMMouseScroll", onWheel);
+    window.addEventListener('scroll', (event) => { this._handleScroll(event) })
+    window.addEventListener('resize', () => { this._handleResize() })
 
-                //set target/old/current Y to match current scroll position to prevent jump to top of container
-                targetY = oldY = container.get(0).scrollTop;
-                currentY = -targetY;
-                
-                minScrollTop = container.get(0).clientHeight - container.get(0).scrollHeight;
-                if(options.onRender){
-                    onRenderCallback = options.onRender;
-                }
-                if(options.remove){
-                    log("122","smoothWheel","remove", "");
-                    running=false;
-                    container.unbind("mousewheel", onWheel);
-                    container.unbind("DOMMouseScroll", onWheel);
-                }else if(!running){
-                    running=true;
-                    animateLoop();
-                }
+    // Listening mouseup on duration range
+    this.$.controlsDuration.addEventListener('mouseup', () => { this._handleDuration() })
 
-            }
-        });
-    };
+    // Listening mouseup on radio 
+    for(let i = 0; i < this.$.controlsEasing.length; i++) {
+      this.$.controlsEasing[i].addEventListener('mouseup', () => { this._handleEasing(this.$.controlsEasingRadio[i].value) })
+    }
+  }
 
+  _handleScroll(_event) {
 
-})(jQuery);
+    this.$.containerBody.style.transform = `translateY(${-window.scrollY}px)`
+  }
+
+  _handleResize() {
+    // Update usefull params
+    this.params.containerHeight = this.$.containerBody.offsetHeight
+    
+    // Update usefull style
+    this.$.hitbox.style.height = `${this.params.containerHeight}px`
+  }
+
+  _handleDuration() {
+    // Update duration value
+    this.$.duration.innerText = this.$.controlsDuration.value + 'ms'
+
+    // Update duration variable
+    this.params.duration = this.$.controlsDuration.value
+
+    // Update duration
+    this.$.containerBody.style.transition = `transform ${this.params.duration}ms ${this.params.timingFunction}`
+  }
+
+  _handleEasing(_value) {
+    // Update timing function variable
+    this.params.timingFunction = _value
+
+    // Update duration
+    this.$.containerBody.style.transition = `transform ${this.params.duration}ms ${this.params.timingFunction}`
+  }
+}
+
+const params = {
+  duration: 1000,
+  timingFunction: 'cubic-bezier(0.23, 1, 0.32, 1)'
+}
+
+new SmoothScroll('.container', params)
