@@ -37,7 +37,7 @@ $(document).ready(function () {
     nav_sections.each(function () {
       var top = $(this).offset().top - main_nav_height,
         bottom = top + $(this).outerHeight();
-	if(curr_pos <= 700){
+	if(cur_pos <= 700){
 	 main_nav.find('li').removeClass('active');
 	$("nav li:first-child").addClass('active');
 	}else if (cur_pos >= top && cur_pos <= bottom) {
