@@ -37,7 +37,8 @@ $(document).ready(function () {
     nav_sections.each(function () {
       var top = $(this).offset().top - main_nav_height,
         bottom = top + $(this).outerHeight();
-
+	console.log(cur_pos);
+	    
       if (cur_pos >= top && cur_pos <= bottom) {
         main_nav.find('li').removeClass('active');
         main_nav.find('a[href="#' + $(this).attr('id') + '"]').parent('li').addClass('active');
