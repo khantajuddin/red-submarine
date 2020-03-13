@@ -15,7 +15,7 @@ $(function() {
 				
 			}			
 			if (direction == "down") {
-        //$('[href="#projects"]').trigger( "click" );
+        $('[href="#home"]').trigger( "click" );
 			}
 			if (direction == "up") {
 				$('[href="#projects"]').trigger( "click" );
