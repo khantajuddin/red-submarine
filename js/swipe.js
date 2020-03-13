@@ -15,10 +15,10 @@ $(function() {
 				
 			}			
 			if (direction == "down") {
-        $('[href="#projects"]').trigger( "click" );
+        //$('[href="#projects"]').trigger( "click" );
 			}
 			if (direction == "up") {
-					window.scrollBy(0,300);
+				$('[href="#projects"]').trigger( "click" );
 			}
 		},
 		//Default is 75px, set to 0 for demo so any distance triggers swipe
