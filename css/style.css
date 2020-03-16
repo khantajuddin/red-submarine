@@ -326,8 +326,8 @@ display:none;
     width:40px;
   }
   .anim-dots {
-    left: 8em;
-    bottom: 26em;
+    left: 9%;
+    bottom: 12%;
     font-size: 3px;
   }
 .anim-slider{
@@ -342,7 +342,7 @@ font-size: 6px;
 .slider-title{font-size: 7.4em;left:1em;top: 1.5em;}
 .slider-subtitle{font-size: 3em;top: 9em;left:2.7em;width: 60%;}
 .circle-3,.circle-2,.circle-1{
-  margin-left: -28%;
+  margin-left: -20%;
   margin-top: 50%;
   font-size: 4.5px;
 }
@@ -350,6 +350,7 @@ font-size: 6px;
 .slide3 .circle-2,
 .slide3 .circle-1{
   margin-left: -40%;
+  margin-top: 53.6%;
 }
 .blurred-circle-bottom-right {
 left: 100em;
