@@ -18,6 +18,7 @@ $(function() {
         $(window).scrollTo({
           top: 0,
           behavior: 'smooth'
+          
         })
 			}
 			if (direction == "up") {
