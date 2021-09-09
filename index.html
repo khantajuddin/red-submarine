@@ -15,6 +15,9 @@
       <link rel="stylesheet" href="css/style.css">
       <link rel="stylesheet" href="https://raw.githubusercontent.com/idiotWu/smooth-scrollbar/7.x/dist/smooth-scrollbar.css" >
       <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+      <script src="js/smooth-scrollbar.js" defer></script>
+
+
       <title>Red Submarine</title>
    </head>
    <body id="my-scrollbar" style="width:100%; height:100vh; overflow:auto;">
@@ -559,6 +562,11 @@
       <script src="js/jquery.paroller.min.js"></script>
 
       <script>
+
+  var Scrollbar = window.Scrollbar;
+
+  Scrollbar.init(document.querySelector('#my-scrollbar'), options);
+
         
          $(document).ready(function(){
              if($(window).width() > 768){
